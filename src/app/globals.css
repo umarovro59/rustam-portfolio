@@ -78,7 +78,7 @@ body.menu-open {
 }
 .brand-logo {
   display: block;
-  width: 40px;
+  width: 34px;
   height: auto;
   filter: brightness(0);
 }
@@ -800,7 +800,7 @@ em {
     min-width: 0;
   }
   .brand-logo {
-    width: 32px;
+    width: 27px;
   }
   .main-nav,
   .header-tools .language-switcher {
