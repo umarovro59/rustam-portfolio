@@ -17,11 +17,20 @@ export const translations = {
     },
     work: {
       label: "Selected work / 01",
-      count: "03 concepts",
       title: "Selected work.",
       body: "Self-initiated studies exploring clear digital identities for thoughtful brands and businesses.",
       concept: "Concept Project",
       view: "View concept project",
+      moreWork: "MORE SELECTED WORK ↓",
+      lessProjects: "LESS PROJECTS ↑",
+      raya: {
+        subtitle: "UNOFFICIAL CONCEPT WEBSITE",
+        category: "WEB DESIGN / BRAND EXPERIENCE",
+        discipline: "FRONTEND DEVELOPMENT",
+        year: "2026",
+        description:
+          "Self-initiated digital concept for RAYA — a sparkling drink brand from Andijan, Uzbekistan. The project focuses on flavour, product presentation, responsive design and interactive brand experience.",
+      },
     },
     projects: [
       {
@@ -96,11 +105,20 @@ export const translations = {
     },
     work: {
       label: "Избранные работы / 01",
-      count: "03 концепции",
       title: "Избранные работы.",
       body: "Концептуальные проекты о ясной цифровой идентичности для внимательных брендов и бизнеса.",
       concept: "Концептуальный проект",
       view: "Открыть концептуальный проект",
+      moreWork: "ЕЩЁ ПРОЕКТЫ ↓",
+      lessProjects: "СВЕРНУТЬ ↑",
+      raya: {
+        subtitle: "НЕОФИЦИАЛЬНЫЙ КОНЦЕПТ САЙТА",
+        category: "ВЕБ-ДИЗАЙН / БРЕНД-ОПЫТ",
+        discipline: "ФРОНТЕНД-РАЗРАБОТКА",
+        year: "2026",
+        description:
+          "Самостоятельно разработанный цифровой концепт для RAYA — бренда газированного напитка из Андижана, Узбекистан. Проект сфокусирован на вкусах, презентации продукта, адаптивном дизайне и интерактивном взаимодействии с брендом.",
+      },
     },
     projects: [
       {

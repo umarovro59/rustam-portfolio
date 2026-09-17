@@ -172,8 +172,17 @@ body.menu-open {
   letter-spacing: 0.04em;
   line-height: 1;
   white-space: nowrap;
-  text-align: right;
+  text-align: left;
   animation: hero-clock-enter 0.6s ease 3.7s both;
+}
+.hero-clock-time,
+.hero-clock-date {
+  display: block;
+}
+.hero-clock-date {
+  margin-top: 7px;
+  font-size: clamp(10px, 0.36em, 13px);
+  letter-spacing: 0.08em;
 }
 .hero-clock-group,
 .hero-clock-seconds {
@@ -349,6 +358,56 @@ em {
 .project + .project {
   margin-top: clamp(45px, 7.2vw, 115px);
 }
+.more-work-control {
+  display: block;
+  margin: clamp(36px, 4vw, 64px) 0 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: var(--meta-size);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+.more-work-control:hover {
+  color: var(--ink);
+}
+.more-work-control:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 1;
+}
+.additional-projects {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition:
+    grid-template-rows 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0s linear 0.4s;
+}
+.additional-projects[data-expanded="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.additional-projects-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.additional-projects .project:first-child {
+  margin-top: clamp(45px, 7.2vw, 115px);
+}
 .project-link {
   display: block;
 }
@@ -360,6 +419,23 @@ em {
 }
 .project-link:hover .project-visual {
   transform: scale(0.985);
+}
+.project-visual.project-raya {
+  height: auto;
+  min-height: 0;
+  background: #be2b28;
+}
+.project-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.project-link:hover .project-raya {
+  transform: none;
+}
+.project-link:hover .project-image {
+  transform: scale(1.015);
 }
 .visual-number {
   position: absolute;
@@ -466,7 +542,6 @@ em {
   display: grid;
   grid-template-columns: 2fr 1fr;
   padding: 15px 0;
-  border-bottom: 1px solid var(--ink);
 }
 .project-meta > div:first-child {
   display: flex;
@@ -483,6 +558,13 @@ em {
   margin: 0;
   font-size: 21px;
   font-weight: 500;
+}
+.project-description {
+  max-width: 620px;
+  margin: 8px 24px 0 0;
+  color: var(--muted);
+  font-size: var(--meta-size);
+  line-height: 1.45;
 }
 .project-details {
   display: grid;
@@ -782,6 +864,7 @@ em {
     transform: none;
   }
   .project-visual,
+  .project-image,
   .service-list li {
     transition: none;
   }
@@ -819,14 +902,17 @@ em {
     background: transparent;
     cursor: pointer;
     font-size: 11px;
+    line-height: 1;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
   .menu-toggle i {
     display: block;
+    flex: 0 0 auto;
     width: 16px;
-    height: 1px;
-    background: var(--ink);
+    height: 6px;
+    background: linear-gradient(var(--ink), var(--ink)) top left / 16px 1px
+      no-repeat;
     position: relative;
     transition: transform 0.25s ease;
   }
@@ -915,24 +1001,34 @@ em {
     grid-template-rows: auto 1fr auto;
   }
   .hero-kicker {
-    grid-template-columns: 1fr 1fr;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 20px;
   }
   .hero-kicker > span {
     display: block;
-    max-width: 160px;
+    width: min(100%, 160px);
     grid-column: 2;
+    justify-self: end;
+    text-align: right;
     white-space: normal;
   }
   .hero-clock {
+    display: flex;
+    flex-direction: column;
     grid-column: 2;
     grid-row: 2;
+    justify-self: end;
+    align-items: flex-end;
     margin-top: 10px;
     font-size: 21px;
+    text-align: right;
   }
   .hero-content {
     grid-column: 1;
     align-self: center;
+    min-width: 0;
+    width: 100%;
     max-width: none;
     padding: 0 0 6vh;
   }
@@ -991,15 +1087,29 @@ em {
     min-height: 190px;
   }
   .project-meta {
-    display: block;
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    column-gap: 9px;
     padding: 13px 0;
   }
   .project-meta > div:first-child {
-    justify-content: space-between;
+    display: contents;
+  }
+  .project-meta > div:first-child > div {
+    min-width: 0;
+    grid-column: 2;
+  }
+  .project-description {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
   }
   .project-details {
-    margin-top: 13px;
+    min-width: 0;
+    grid-column: 2;
+    margin-top: 14px;
     grid-template-columns: 1fr 1fr;
+    gap: 7px 14px;
     line-height: 1.35;
   }
   .about-text {
