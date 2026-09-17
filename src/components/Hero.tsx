@@ -29,7 +29,6 @@ export function Hero({
           </a>
         </div>
       </div>
-      <div className="hero-rule" aria-hidden="true" />
     </section>
   );
 }

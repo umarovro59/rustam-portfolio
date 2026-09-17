@@ -16,7 +16,7 @@ export const translations = {
       cta: "View selected work",
     },
     work: {
-      label: "Selected work / 01",
+      label: "Selected work",
       title: "Selected work.",
       body: "Self-initiated studies exploring clear digital identities for thoughtful brands and businesses.",
       concept: "Concept Project",
@@ -50,13 +50,13 @@ export const translations = {
       },
     ],
     about: {
-      label: "About / 02",
+      label: "About",
       title: "Digital spaces with clarity and character.",
       body: "Independent web designer creating clear, thoughtful and visually distinctive digital experiences for brands, businesses and people with something to say.",
       approach: "Strategy / Design / Interaction / Development",
     },
     services: {
-      label: "Services / 03",
+      label: "Services",
       title: "Ways to work together.",
       items: [
         "Web Design",
@@ -66,7 +66,7 @@ export const translations = {
       ],
     },
     products: {
-      label: "Digital Products / 04",
+      label: "Digital Products",
       count: "Coming soon",
       title: "Resources for digital makers.",
       body: "Templates and resources for designers and businesses. Built carefully, released with intention.",
@@ -104,7 +104,7 @@ export const translations = {
       cta: "Смотреть работы",
     },
     work: {
-      label: "Избранные работы / 01",
+      label: "Избранные работы",
       title: "Избранные работы.",
       body: "Концептуальные проекты о ясной цифровой идентичности для внимательных брендов и бизнеса.",
       concept: "Концептуальный проект",
@@ -138,13 +138,13 @@ export const translations = {
       },
     ],
     about: {
-      label: "Обо мне / 02",
+      label: "Обо мне",
       title: "Цифровые пространства с ясностью и характером.",
       body: "Независимый веб-дизайнер, создающий ясные, продуманные и выразительные цифровые решения для брендов, бизнеса и людей, которым есть что сказать.",
       approach: "Стратегия / Дизайн / Взаимодействие / Разработка",
     },
     services: {
-      label: "Услуги / 03",
+      label: "Услуги",
       title: "Форматы сотрудничества.",
       items: [
         "Веб-дизайн",
@@ -154,7 +154,7 @@ export const translations = {
       ],
     },
     products: {
-      label: "Цифровые продукты / 04",
+      label: "Цифровые продукты",
       count: "Скоро",
       title: "Ресурсы для digital-мейкеров.",
       body: "Шаблоны и ресурсы для дизайнеров и бизнеса. Создаются внимательно и выходят в своё время.",

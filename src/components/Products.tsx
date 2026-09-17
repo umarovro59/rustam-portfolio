@@ -30,9 +30,8 @@ export function Products({
         </p>
       </div>
       <div className="product-list reveal reveal-delay-2">
-        {copy.items.map((product, index) => (
+        {copy.items.map((product) => (
           <div className="product-row" key={product}>
-            <span>0{index + 1}</span>
             <strong>{product}</strong>
             <span>{copy.soon}</span>
           </div>

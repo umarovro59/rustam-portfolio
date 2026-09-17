@@ -21,12 +21,10 @@ type ProjectItem = {
 
 function ProjectVisual({
   tone,
-  number,
   image,
   title,
 }: {
   tone?: string;
-  number: string;
   image: StaticImageData | null;
   title: string;
 }) {
@@ -45,7 +43,6 @@ function ProjectVisual({
 
   return (
     <div className={`project-visual ${tone}`} aria-hidden="true">
-      <span className="visual-number">{number}</span>
       <span className="visual-word">FORM / FUNCTION</span>
       <span className="visual-orbit" />
       <span className="visual-panel" />
@@ -76,13 +73,11 @@ function ProjectCard({
           tone={
             project.image ? undefined : tones[(index - 1) % tones.length]
           }
-          number={`0${index + 1}`}
           image={project.image}
           title={project.title}
         />
         <div className="project-meta">
           <div>
-            <span className="project-number">0{index + 1}</span>
             <div>
               <h3>{project.title}</h3>
               {project.description && (

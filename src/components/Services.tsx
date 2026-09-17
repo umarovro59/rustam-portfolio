@@ -16,9 +16,8 @@ export function Services({
           {copy.title}
         </h2>
         <ol className="service-list reveal reveal-delay-1">
-          {copy.items.map((service, index) => (
+          {copy.items.map((service) => (
             <li key={service}>
-              <span>0{index + 1}</span>
               <strong>{service}</strong>
               <span className="service-arrow" aria-hidden="true">
                 &#8599;
