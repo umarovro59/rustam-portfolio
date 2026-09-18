@@ -9,13 +9,14 @@
   --line: #e3e3e3;
   --accent: #b85a42;
   --section-space: clamp(44px, 5.5vw, 80px);
-  --section-title-size: clamp(32px, 3.25vw, 54px);
+  --section-title-size: clamp(29px, 2.9vw, 48px);
   --contact-space: clamp(48px, 5.5vw, 80px);
   --secondary-size: 13px;
   --meta-size: 10px;
   --block-edge: clamp(12px, 1.4vw, 22px);
-  --block-gap: clamp(12px, 1.4vw, 22px);
+  --block-gap: clamp(8px, 0.75vw, 12px);
   --block-radius: clamp(24px, 2.2vw, 32px);
+  --title-group-gap: 20px;
 }
 * {
   box-sizing: border-box;
@@ -279,7 +280,6 @@ body.menu-open {
   margin: 0;
   font-size: 11px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 .hero-title,
 .section-title,
@@ -330,9 +330,11 @@ body.menu-open {
   animation-delay: 4.1s;
 }
 .section-title {
+  margin-top: 0;
   font-size: var(--section-title-size);
   line-height: 0.98;
   letter-spacing: -0.04em;
+  text-transform: none;
 }
 em {
   color: inherit;
@@ -418,7 +420,6 @@ em {
 .section-count {
   color: var(--muted);
   font-size: var(--meta-size);
-  text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .work-heading,
@@ -426,15 +427,16 @@ em {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  margin: 44px 0 54px;
+  margin: var(--title-group-gap) 0 54px;
 }
 .work-heading--compact {
-  margin-top: 18px;
+  margin-top: var(--title-group-gap);
   margin-bottom: 40px;
 }
 .work-heading .muted-copy,
 .products-heading .muted-copy {
-  margin-top: 10px;
+  align-self: start;
+  margin-top: 0;
 }
 .products-copy {
   justify-self: start;
@@ -454,7 +456,6 @@ em {
   font-size: var(--meta-size);
   font-weight: 400;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   transition: color 0.25s ease;
 }
 .more-work-control:hover {
@@ -644,7 +645,6 @@ em {
   display: grid;
   grid-template-columns: 1.2fr 1.2fr;
   gap: 7px 16px;
-  text-transform: uppercase;
 }
 .project-details span:first-child {
   color: var(--muted);
@@ -653,11 +653,10 @@ em {
 .services-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin-top: 44px;
+  margin-top: var(--title-group-gap);
 }
 .about-text {
-  align-self: end;
-  padding-bottom: 7px;
+  align-self: start;
 }
 .about-signature {
   display: block;
@@ -665,7 +664,6 @@ em {
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 .service-list {
   list-style: none;
@@ -714,7 +712,6 @@ em {
 .product-row span {
   color: var(--muted);
   font-size: var(--meta-size);
-  text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 .product-row strong {
@@ -724,6 +721,7 @@ em {
 .products-link {
   display: inline-block;
   margin-top: 30px;
+  text-transform: none;
 }
 .contact-section {
   min-height: 0;
@@ -732,13 +730,16 @@ em {
 }
 .contact-main {
   margin-left: 16.66%;
+  margin-top: var(--title-group-gap);
 }
 .contact-title {
+  margin-top: 0;
   max-width: 980px;
-  font-size: clamp(34px, 3.4vw, 52px);
+  font-size: clamp(31px, 3vw, 46px);
   line-height: 0.98;
   letter-spacing: -0.04em;
   color: #2a2a28;
+  text-transform: none;
 }
 .contact-email {
   display: flex;
@@ -813,7 +814,6 @@ em {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 .footer-links a {
@@ -969,11 +969,12 @@ em {
 @media (max-width: 700px) {
   :root {
     --section-space: 44px;
-    --section-title-size: clamp(30px, 7.2vw, 42px);
+    --section-title-size: clamp(27px, 6.5vw, 37px);
     --contact-space: 48px;
     --block-edge: 8px;
-    --block-gap: 8px;
+    --block-gap: 6px;
     --block-radius: 18px;
+    --title-group-gap: 16px;
   }
   .hero-shell {
     --dot-grid-step: 16px;
@@ -1199,10 +1200,10 @@ em {
   .about-content,
   .services-content {
     display: block;
-    margin-top: 40px;
+    margin-top: var(--title-group-gap);
   }
   .work-heading--compact {
-    margin-top: 16px;
+    margin-top: var(--title-group-gap);
     margin-bottom: 32px;
   }
   .work-heading .muted-copy,
@@ -1214,7 +1215,7 @@ em {
     max-width: 310px;
   }
   .section-title {
-    font-size: clamp(30px, 7.4vw, 36px);
+    font-size: clamp(27px, 6.7vw, 32px);
     line-height: 1;
     letter-spacing: -0.035em;
   }
@@ -1261,10 +1262,10 @@ em {
   }
   .contact-main {
     margin-left: 0;
-    margin-top: 40px;
+    margin-top: var(--title-group-gap);
   }
   .contact-title {
-    font-size: clamp(28px, 7.4vw, 36px);
+    font-size: clamp(26px, 6.7vw, 32px);
     line-height: 1;
     letter-spacing: -0.035em;
   }
@@ -1294,7 +1295,7 @@ em {
     font-size: clamp(40px, 5.4vw, 58px);
   }
   .section-title {
-    font-size: clamp(32px, 4.5vw, 52px);
+    font-size: clamp(29px, 4vw, 46px);
     line-height: 0.98;
     letter-spacing: -0.04em;
   }
@@ -1365,12 +1366,12 @@ em {
     letter-spacing: -0.035em;
   }
   html[lang="ru"] .section-title {
-    font-size: clamp(30px, 4.1vw, 44px);
+    font-size: clamp(27px, 3.7vw, 39px);
     line-height: 1;
     letter-spacing: -0.035em;
   }
   html[lang="ru"] .contact-title {
-    font-size: clamp(30px, 3.4vw, 40px);
+    font-size: clamp(27px, 3vw, 36px);
     line-height: 1;
     letter-spacing: -0.035em;
   }
@@ -1404,7 +1405,7 @@ html[lang="ru"] .project-details {
     letter-spacing: -0.025em;
   }
   html[lang="ru"] .section-title {
-    font-size: clamp(27px, 6.8vw, 32px);
+    font-size: clamp(24px, 6.1vw, 29px);
     line-height: 1;
     letter-spacing: -0.035em;
   }

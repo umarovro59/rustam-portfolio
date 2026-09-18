@@ -43,7 +43,7 @@ function ProjectVisual({
 
   return (
     <div className={`project-visual ${tone}`} aria-hidden="true">
-      <span className="visual-word">FORM / FUNCTION</span>
+      <span className="visual-word">Form / function</span>
       <span className="visual-orbit" />
       <span className="visual-panel" />
     </div>
