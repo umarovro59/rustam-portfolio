@@ -65,15 +65,20 @@ body.menu-open {
   overflow: hidden;
 }
 .hero-shell {
+  --dot-grid-size: 0.75px;
+  --dot-grid-step: 18px;
+  --dot-grid-offset-x: 0px;
+  --dot-grid-offset-y: 0px;
   margin: var(--block-edge) var(--block-edge) 0;
   border-radius: var(--block-radius);
   background-color: #111111;
   background-image: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.1) 0.75px,
-    transparent 0.85px
+    rgba(255, 255, 255, 0.1) var(--dot-grid-size),
+    transparent calc(var(--dot-grid-size) + 0.1px)
   );
-  background-size: 18px 18px;
+  background-size: var(--dot-grid-step) var(--dot-grid-step);
+  background-position: var(--dot-grid-offset-x) var(--dot-grid-offset-y);
   color: #f7f7f7;
   overflow: hidden;
 }
@@ -193,7 +198,7 @@ body.menu-open {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.45);
   opacity: 0;
-  transform: scale(0.75);
+  transform: translate(-50%, -50%) scale(0.75);
   animation: hero-dot-pulse var(--dot-duration) ease-in-out var(--dot-delay)
     infinite;
   will-change: opacity, transform;
@@ -908,11 +913,11 @@ em {
   44%,
   100% {
     opacity: 0;
-    transform: scale(0.75);
+    transform: translate(-50%, -50%) scale(0.75);
   }
   26% {
     opacity: 0.75;
-    transform: scale(1.15);
+    transform: translate(-50%, -50%) scale(1.15);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -964,7 +969,7 @@ em {
     --block-radius: 18px;
   }
   .hero-shell {
-    background-size: 16px 16px;
+    --dot-grid-step: 16px;
   }
   .hero-ambient-dot {
     background: rgba(255, 255, 255, 0.32);

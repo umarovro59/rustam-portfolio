@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { BackToTop } from "@/components/BackToTop";
@@ -15,6 +15,29 @@ import { Locale, translations } from "@/lib/translations";
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("en");
   const hasMounted = useRef(false);
+
+  useLayoutEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    if (window.location.hash) {
+      return () => {
+        window.history.scrollRestoration = previousScrollRestoration;
+      };
+    }
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
+
+    scrollToTop();
+    const frame = window.requestAnimationFrame(scrollToTop);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
 
   useEffect(() => {
     const savedLocale = window.localStorage.getItem("rustam-locale");
