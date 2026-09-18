@@ -9,7 +9,7 @@
   --line: #e3e3e3;
   --accent: #b85a42;
   --section-space: clamp(44px, 5.5vw, 80px);
-  --section-title-size: clamp(38px, 3.9vw, 66px);
+  --section-title-size: clamp(32px, 3.25vw, 54px);
   --contact-space: clamp(48px, 5.5vw, 80px);
   --secondary-size: 13px;
   --meta-size: 10px;
@@ -331,6 +331,8 @@ body.menu-open {
 }
 .section-title {
   font-size: var(--section-title-size);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 em {
   color: inherit;
@@ -626,7 +628,9 @@ em {
 }
 .project-meta h3 {
   margin: 0;
-  font-size: 21px;
+  font-size: 17.5px;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   font-weight: 500;
 }
 .project-description {
@@ -730,7 +734,10 @@ em {
   margin-left: 16.66%;
 }
 .contact-title {
-  font-size: clamp(40px, 4.1vw, 64px);
+  max-width: 980px;
+  font-size: clamp(34px, 3.4vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
   color: #2a2a28;
 }
 .contact-email {
@@ -1207,8 +1214,9 @@ em {
     max-width: 310px;
   }
   .section-title {
-    font-size: var(--section-title-size);
-    line-height: 0.96;
+    font-size: clamp(30px, 7.4vw, 36px);
+    line-height: 1;
+    letter-spacing: -0.035em;
   }
   .project-visual {
     height: 54vw;
@@ -1256,8 +1264,9 @@ em {
     margin-top: 40px;
   }
   .contact-title {
-    font-size: clamp(32px, 8.2vw, 44px);
-    line-height: 0.96;
+    font-size: clamp(28px, 7.4vw, 36px);
+    line-height: 1;
+    letter-spacing: -0.035em;
   }
   .contact-email {
     margin-top: 44px;
@@ -1285,7 +1294,9 @@ em {
     font-size: clamp(40px, 5.4vw, 58px);
   }
   .section-title {
-    font-size: clamp(38px, 5.4vw, 64px);
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
   }
 }
 @media (max-width: 380px) {
@@ -1324,5 +1335,89 @@ em {
   .mobile-nav {
     inset-inline: var(--block-edge);
     padding-inline: 20px;
+  }
+}
+
+@media (min-width: 1101px) {
+  html[lang="ru"] .main-nav {
+    gap: clamp(20px, 2.3vw, 36px);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+  }
+  html[lang="ru"] .hero-title {
+    max-width: 940px;
+    font-size: clamp(40px, 4vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  html[lang="ru"] .main-nav {
+    gap: 18px;
+    font-size: 11px;
+    letter-spacing: 0.07em;
+  }
+  html[lang="ru"] .hero-title {
+    max-width: 880px;
+    font-size: clamp(38px, 4.8vw, 52px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  html[lang="ru"] .section-title {
+    font-size: clamp(30px, 4.1vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  html[lang="ru"] .contact-title {
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+}
+
+html[lang="ru"] .hero-foot p {
+  max-width: 500px;
+  line-height: 1.65;
+}
+html[lang="ru"] .about-text p {
+  max-width: 340px;
+  line-height: 1.55;
+}
+html[lang="ru"] .project-details {
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 700px) {
+  html[lang="ru"] .hero-kicker {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  html[lang="ru"] .hero-title {
+    max-width: 380px;
+    font-size: clamp(28px, 7.5vw, 34px);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+  }
+  html[lang="ru"] .mobile-nav-links a {
+    font-size: clamp(27px, 7.6vw, 32px);
+    letter-spacing: -0.025em;
+  }
+  html[lang="ru"] .section-title {
+    font-size: clamp(27px, 6.8vw, 32px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  html[lang="ru"] .about-text p {
+    max-width: 310px;
+    line-height: 1.55;
+  }
+  html[lang="ru"] .project-description {
+    font-size: 9.5px;
+    line-height: 1.42;
+  }
+  html[lang="ru"] .project-details {
+    font-size: 9.5px;
+    line-height: 1.4;
   }
 }

@@ -17,7 +17,7 @@ export const translations = {
     },
     work: {
       label: "Selected work",
-      title: "Selected work.",
+      title: "Selected work",
       body: "Self-initiated studies exploring clear digital identities for thoughtful brands and businesses.",
       concept: "Concept Project",
       view: "View concept project",
@@ -51,13 +51,13 @@ export const translations = {
     ],
     about: {
       label: "About",
-      title: "Digital spaces with clarity and character.",
+      title: "Digital spaces with clarity and character",
       body: "Independent web designer creating clear, thoughtful and visually distinctive digital experiences for brands, businesses and people with something to say.",
       approach: "Strategy / Design / Interaction / Development",
     },
     services: {
       label: "Services",
-      title: "Ways to work together.",
+      title: "Ways to work together",
       items: [
         "Web Design",
         "Landing Pages",
@@ -68,7 +68,7 @@ export const translations = {
     products: {
       label: "Digital Products",
       count: "Coming soon",
-      title: "Resources for digital makers.",
+      title: "Resources for digital makers",
       body: "Templates and resources for designers and businesses. Built carefully, released with intention.",
       items: ["Website Template", "Figma UI Resource", "Landing Page System"],
       link: "Explore Store",
@@ -76,7 +76,7 @@ export const translations = {
     },
     contact: {
       label: "Have a project in mind?",
-      title: "Let's work together.",
+      title: "Let's work together",
     },
     footer: {
       role: "Web Designer",
@@ -105,7 +105,7 @@ export const translations = {
     },
     work: {
       label: "Избранные работы",
-      title: "Избранные работы.",
+      title: "Избранные работы",
       body: "Концептуальные проекты о ясной цифровой идентичности для внимательных брендов и бизнеса.",
       concept: "Концептуальный проект",
       view: "Открыть концептуальный проект",
@@ -139,13 +139,13 @@ export const translations = {
     ],
     about: {
       label: "Обо мне",
-      title: "Цифровые пространства с ясностью и характером.",
+      title: "Цифровые пространства с ясностью и характером",
       body: "Независимый веб-дизайнер, создающий ясные, продуманные и выразительные цифровые решения для брендов, бизнеса и людей, которым есть что сказать.",
       approach: "Стратегия / Дизайн / Взаимодействие / Разработка",
     },
     services: {
       label: "Услуги",
-      title: "Форматы сотрудничества.",
+      title: "Форматы сотрудничества",
       items: [
         "Веб-дизайн",
         "Лендинги",
@@ -156,13 +156,13 @@ export const translations = {
     products: {
       label: "Цифровые продукты",
       count: "Скоро",
-      title: "Ресурсы для digital-мейкеров.",
+      title: "Ресурсы для digital-мейкеров",
       body: "Шаблоны и ресурсы для дизайнеров и бизнеса. Создаются внимательно и выходят в своё время.",
       items: ["Шаблон сайта", "UI-ресурс для Figma", "Система лендингов"],
       link: "Открыть магазин",
       soon: "Скоро",
     },
-    contact: { label: "Есть проект?", title: "Давайте работать вместе." },
+    contact: { label: "Есть проект?", title: "Давайте работать вместе" },
     footer: {
       role: "Веб-дизайнер",
       socials: ["Instagram", "LinkedIn", "Telegram"],
