@@ -37,9 +37,11 @@ export default function Home() {
 
   return (
     <div id="top" className="site-shell">
-      <Header locale={locale} onLocaleChange={setLocale} copy={copy} />
       <main>
-        <Hero copy={copy.hero} />
+        <div className="hero-shell">
+          <Header locale={locale} onLocaleChange={setLocale} copy={copy} />
+          <Hero copy={copy.hero} />
+        </div>
         <SelectedWork copy={copy.work} projects={copy.projects} />
         <About copy={copy.about} />
         <Services copy={copy.services} />
