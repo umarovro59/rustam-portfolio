@@ -5,6 +5,7 @@ import type { StaticImageData } from "next/image";
 import { useState } from "react";
 import type { Copy } from "@/lib/translations";
 import rayaPreview from "../../public/images/projects/raya/raya-preview.webp";
+import norwayPreview from "../../public/images/projects/norway/norway-preview.webp";
 
 const tones = ["project-solis", "project-vela", "project-noma"];
 
@@ -71,7 +72,7 @@ function ProjectCard({
       >
         <ProjectVisual
           tone={
-            project.image ? undefined : tones[(index - 1) % tones.length]
+            project.image ? undefined : tones[(index - 2) % tones.length]
           }
           image={project.image}
           title={project.title}
@@ -113,6 +114,12 @@ export function SelectedWork({
   };
   const allProjects = [
     raya,
+    {
+      title: "Norway Travel",
+      ...copy.norway,
+      href: "https://norway-travel-website.vercel.app/",
+      image: norwayPreview,
+    },
     ...projects.map((project) => ({
       ...project,
       subtitle: copy.concept,

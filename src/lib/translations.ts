@@ -23,6 +23,14 @@ export const translations = {
       view: "View concept project",
       moreWork: "More selected work ↓",
       lessProjects: "Less projects ↑",
+      norway: {
+        subtitle: "Travel website concept",
+        category: "Travel / tourism",
+        discipline: "Web design / frontend development",
+        year: "2026",
+        description:
+          "A travel website concept for exploring Norway: fjords, mountain routes and Arctic destinations. Atmospheric photography, an interactive landscape slider and curated tour cards create an immersive travel experience in English and Russian.",
+      },
       raya: {
         subtitle: "Unofficial concept website",
         category: "Web design / brand experience",
@@ -111,6 +119,14 @@ export const translations = {
       view: "Открыть концептуальный проект",
       moreWork: "Ещё проекты ↓",
       lessProjects: "Свернуть ↑",
+      norway: {
+        subtitle: "Концепт туристического сайта",
+        category: "Путешествия / туризм",
+        discipline: "Веб-дизайн / фронтенд-разработка",
+        year: "2026",
+        description:
+          "Концепт туристического сайта о Норвегии: фьорды, горные маршруты и арктические направления. Атмосферные фотографии, интерактивный слайдер пейзажей и карточки туров создают эффект погружения в путешествие. Сайт доступен на русском и английском языках.",
+      },
       raya: {
         subtitle: "Неофициальный концепт сайта",
         category: "Веб-дизайн / бренд-опыт",
