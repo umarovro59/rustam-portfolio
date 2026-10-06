@@ -658,12 +658,56 @@ em {
 .about-text {
   align-self: start;
 }
-.about-signature {
-  display: block;
+.about-tool,
+.about-process {
+  grid-column: 1 / -1;
+  min-width: 0;
   margin-top: 42px;
-  font-size: 11px;
-  color: var(--muted);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.about-tool-heading,
+.about-process-heading {
+  margin: 0 0 16px;
+  font-size: var(--secondary-size);
+  font-weight: 500;
+}
+.about-tool-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   letter-spacing: 0.1em;
+}
+.about-tool p,
+.about-process p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--secondary-size);
+  line-height: 1.6;
+}
+.about-tool p + p {
+  margin-top: 12px;
+}
+.about-workflow {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  gap: clamp(12px, 2vw, 28px);
+  font-size: var(--secondary-size);
+}
+.about-workflow li {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+}
+.about-workflow-arrow {
+  color: var(--muted);
+}
+.about-arrow-vertical {
+  display: none;
 }
 .service-list {
   list-style: none;
@@ -1245,9 +1289,32 @@ em {
   .about-text {
     margin-top: 30px;
   }
-  .about-signature {
-    margin-top: 24px;
-    line-height: 1.8;
+  .about-tool,
+  .about-process {
+    margin-top: 30px;
+  }
+  .about-workflow,
+  .about-workflow li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .about-workflow {
+    width: fit-content;
+    max-width: 100%;
+  }
+  .about-workflow li {
+    width: 100%;
+  }
+  .about-workflow-arrow {
+    width: 100%;
+    text-align: center;
+  }
+  .about-arrow-horizontal {
+    display: none;
+  }
+  .about-arrow-vertical {
+    display: inline;
   }
   .service-list {
     margin-top: 32px;
