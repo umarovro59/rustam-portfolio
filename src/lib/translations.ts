@@ -19,10 +19,7 @@ export const translations = {
       label: "Selected work",
       title: "Selected work",
       body: "Self-initiated studies exploring clear digital identities for thoughtful brands and businesses.",
-      concept: "Concept project",
       view: "View concept project",
-      moreWork: "More selected work ↓",
-      lessProjects: "Less projects ↑",
       norway: {
         subtitle: "Travel website concept",
         category: "Travel / tourism",
@@ -40,23 +37,6 @@ export const translations = {
           "Self-initiated digital concept for RAYA — a sparkling drink brand from Andijan, Uzbekistan. The project focuses on flavour, product presentation, responsive design and interactive brand experience.",
       },
     },
-    projects: [
-      {
-        title: "Solis House",
-        category: "Architecture / real estate",
-        discipline: "Web design",
-      },
-      {
-        title: "Vela Capital",
-        category: "Fintech / investment",
-        discipline: "Digital product / web design",
-      },
-      {
-        title: "Noma Studio",
-        category: "Fashion / lifestyle",
-        discipline: "Web design / art direction",
-      },
-    ],
     about: {
       label: "About",
       title: "Digital spaces with clarity and character",
@@ -119,10 +99,7 @@ export const translations = {
       label: "Избранные работы",
       title: "Избранные работы",
       body: "Концептуальные проекты о ясной цифровой идентичности для внимательных брендов и бизнеса.",
-      concept: "Концептуальный проект",
       view: "Открыть концептуальный проект",
-      moreWork: "Ещё проекты ↓",
-      lessProjects: "Свернуть ↑",
       norway: {
         subtitle: "Концепт туристического сайта",
         category: "Путешествия / туризм",
@@ -140,23 +117,6 @@ export const translations = {
           "Самостоятельно разработанный цифровой концепт для RAYA — бренда газированного напитка из Андижана, Узбекистан. Проект сфокусирован на вкусах, презентации продукта, адаптивном дизайне и интерактивном взаимодействии с брендом.",
       },
     },
-    projects: [
-      {
-        title: "Solis House",
-        category: "Архитектура / недвижимость",
-        discipline: "Веб-дизайн",
-      },
-      {
-        title: "Vela Capital",
-        category: "Финтех / инвестиции",
-        discipline: "Цифровой продукт / веб-дизайн",
-      },
-      {
-        title: "Noma Studio",
-        category: "Мода / образ жизни",
-        discipline: "Веб-дизайн / арт-дирекшн",
-      },
-    ],
     about: {
       label: "Обо мне",
       title: "Цифровые пространства с ясностью и характером",

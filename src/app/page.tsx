@@ -65,7 +65,7 @@ export default function Home() {
           <Header locale={locale} onLocaleChange={setLocale} copy={copy} />
           <Hero copy={copy.hero} />
         </div>
-        <SelectedWork copy={copy.work} projects={copy.projects} />
+        <SelectedWork copy={copy.work} />
         <About copy={copy.about} />
         <Services copy={copy.services} />
         <Products copy={copy.products} />

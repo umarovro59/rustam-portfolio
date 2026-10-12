@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
-import { useState } from "react";
 import type { Copy } from "@/lib/translations";
 import rayaPreview from "../../public/images/projects/raya/raya-preview.webp";
 import norwayPreview from "../../public/images/projects/norway/norway-preview.webp";
-
-const tones = ["project-solis", "project-vela", "project-noma"];
 
 type ProjectItem = {
   title: string;
@@ -17,47 +14,27 @@ type ProjectItem = {
   year: string;
   description: string | null;
   href: string;
-  image: StaticImageData | null;
+  image: StaticImageData;
 };
 
-function ProjectVisual({
-  tone,
-  image,
-  title,
-}: {
-  tone?: string;
-  image: StaticImageData | null;
-  title: string;
-}) {
-  if (image) {
-    return (
-      <div className="project-visual project-raya">
-        <Image
-          src={image}
-          alt={`${title} website hero`}
-          sizes="(max-width: 700px) calc(100vw - 48px), 90vw"
-          className="project-image"
-        />
-      </div>
-    );
-  }
-
+function ProjectVisual({ image, title }: { image: StaticImageData; title: string }) {
   return (
-    <div className={`project-visual ${tone}`} aria-hidden="true">
-      <span className="visual-word">Form / function</span>
-      <span className="visual-orbit" />
-      <span className="visual-panel" />
+    <div className="project-visual project-raya">
+      <Image
+        src={image}
+        alt={`${title} website hero`}
+        sizes="(max-width: 700px) calc(100vw - 48px), 90vw"
+        className="project-image"
+      />
     </div>
   );
 }
 
 function ProjectCard({
   project,
-  index,
   viewLabel,
 }: {
   project: ProjectItem;
-  index: number;
   viewLabel: string;
 }) {
   return (
@@ -71,9 +48,6 @@ function ProjectCard({
           : {})}
       >
         <ProjectVisual
-          tone={
-            project.image ? undefined : tones[(index - 2) % tones.length]
-          }
           image={project.image}
           title={project.title}
         />
@@ -100,12 +74,9 @@ function ProjectCard({
 
 export function SelectedWork({
   copy,
-  projects,
 }: {
   copy: Copy["work"];
-  projects: Copy["projects"];
 }) {
-  const [isExpanded, setIsExpanded] = useState(false);
   const raya = {
     title: "RAYA",
     ...copy.raya,
@@ -115,22 +86,12 @@ export function SelectedWork({
   const allProjects = [
     raya,
     {
-      title: "Norway Travel",
+      title: "Around the World — Norway Mountains",
       ...copy.norway,
       href: "https://norway-travel-website.vercel.app/",
       image: norwayPreview,
     },
-    ...projects.map((project) => ({
-      ...project,
-      subtitle: copy.concept,
-      year: "2026",
-      description: null,
-      href: "#contact",
-      image: null,
-    })),
   ];
-  const primaryProjects = allProjects.slice(0, 4);
-  const additionalProjects = allProjects.slice(4);
 
   return (
     <section
@@ -147,47 +108,13 @@ export function SelectedWork({
         <p className="muted-copy reveal reveal-delay-1">{copy.body}</p>
       </div>
       <div className="project-list">
-        {primaryProjects.map((project, index) => (
+        {allProjects.map((project) => (
           <ProjectCard
             project={project}
-            index={index}
             viewLabel={copy.view}
             key={project.title}
           />
         ))}
-        <button
-          type="button"
-          className="more-work-control"
-          disabled={additionalProjects.length === 0}
-          aria-expanded={
-            additionalProjects.length > 0 ? isExpanded : undefined
-          }
-          aria-controls={
-            additionalProjects.length > 0 ? "additional-projects" : undefined
-          }
-          onClick={() => setIsExpanded((expanded) => !expanded)}
-        >
-          {isExpanded ? copy.lessProjects : copy.moreWork}
-        </button>
-        {additionalProjects.length > 0 && (
-            <div
-              id="additional-projects"
-              className="additional-projects"
-              data-expanded={isExpanded}
-              aria-hidden={!isExpanded}
-            >
-              <div className="additional-projects-inner">
-                {additionalProjects.map((project, index) => (
-                  <ProjectCard
-                    project={project}
-                    index={index + 4}
-                    viewLabel={copy.view}
-                    key={project.title}
-                  />
-                ))}
-              </div>
-            </div>
-        )}
       </div>
     </section>
   );
