@@ -510,44 +510,26 @@ em {
 .project-details span:first-child {
   color: var(--muted);
 }
+.about-content,
 .services-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: var(--title-group-gap);
 }
 .about-content {
-  --about-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  --about-column-gap: clamp(32px, 5vw, 80px);
-  display: grid;
-  grid-template-columns: var(--about-columns);
-  column-gap: var(--about-column-gap);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  column-gap: clamp(24px, 3vw, 52px);
   align-items: start;
-  margin-top: var(--title-group-gap);
 }
 .about-content > .section-title {
   min-width: 0;
-  max-width: 18ch;
-  margin: 0;
-  line-height: 1.08;
-  text-wrap: balance;
-  overflow-wrap: anywhere;
 }
 .about-text {
   min-width: 0;
   align-self: start;
 }
-.about-text p,
-html[lang="ru"] .about-text p {
-  max-width: 40ch;
-  line-height: 1.65;
-}
 .about-tool,
 .about-process {
-  display: grid;
-  grid-template-columns: var(--about-columns);
-  column-gap: var(--about-column-gap);
-  row-gap: 24px;
-  align-items: start;
   grid-column: 1 / -1;
   min-width: 0;
   margin-top: 42px;
@@ -556,7 +538,7 @@ html[lang="ru"] .about-text p {
 }
 .about-tool-heading,
 .about-process-heading {
-  margin: 0;
+  margin: 0 0 16px;
   font-size: var(--secondary-size);
   font-weight: 500;
 }
@@ -568,35 +550,28 @@ html[lang="ru"] .about-text p {
 }
 .about-tool p,
 .about-process p {
-  max-width: 40ch;
+  max-width: 680px;
   margin: 0;
   color: var(--muted);
   font-size: var(--secondary-size);
   line-height: 1.6;
-}
-.about-tool-copy,
-.about-process-content {
-  min-width: 0;
 }
 .about-tool p + p {
   margin-top: 12px;
 }
 .about-workflow {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
-  gap: 12px 16px;
+  margin: 24px 0;
+  gap: clamp(12px, 2vw, 28px);
   font-size: var(--secondary-size);
 }
 .about-workflow li {
   display: flex;
   align-items: center;
-  gap: 16px;
-  min-width: 0;
-  overflow-wrap: anywhere;
+  gap: clamp(12px, 2vw, 28px);
 }
 .about-workflow-arrow {
   color: var(--muted);
@@ -680,58 +655,112 @@ html[lang="ru"] .about-text p {
   color: #2a2a28;
   text-transform: none;
 }
-.contact-email {
-  display: flex;
-  align-items: center;
-  width: min(100%, 510px);
-  margin-top: 64px;
-  border-bottom: 2px solid #8a8a84;
-  transition: border-color 0.25s ease;
+.contact-form {
+  position: relative;
+  display: grid;
+  width: min(100%, 620px);
+  gap: 28px;
+  margin-top: 54px;
 }
-.contact-email:hover,
-.contact-email:focus-within {
-  border-color: #171716;
-}
-.contact-email input {
+.contact-field {
+  display: grid;
   min-width: 0;
-  flex: 1;
+  gap: 8px;
+}
+.contact-field label {
+  color: var(--muted);
+  font-size: var(--meta-size);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  min-width: 0;
   border: 0;
+  border-bottom: 1px solid #8a8a84;
+  border-radius: 0;
   outline: 0;
-  padding: 12px 0 13px;
+  padding: 10px 0 13px;
   background: transparent;
   color: var(--ink);
   font: inherit;
   font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 0.25s ease;
 }
-.contact-email input::placeholder {
-  color: #666666;
+.contact-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #767676;
   opacity: 1;
 }
-.contact-email input:hover::placeholder,
-.contact-email input:focus::placeholder {
-  color: #4a4a47;
-  opacity: 1;
+.contact-field input:hover,
+.contact-field input:focus,
+.contact-field textarea:hover,
+.contact-field textarea:focus {
+  border-color: #171716;
 }
-.contact-email button {
-  flex: 0 0 auto;
-  border: 0;
-  padding: 10px 0 10px 20px;
+.contact-field input[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] {
+  border-color: var(--accent);
+}
+.contact-field-error,
+.contact-status {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.contact-field-error,
+.contact-status--error {
+  color: var(--accent);
+}
+.contact-status--success {
+  max-width: 520px;
+  margin-top: 54px;
+  color: #2a2a28;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  min-height: 46px;
+  gap: 12px;
+  border: 1px solid #2a2a28;
+  border-radius: 999px;
+  padding: 11px 18px;
   background: transparent;
   color: #2a2a28;
   cursor: pointer;
-  font-size: 22px;
+  font: inherit;
+  font-size: 13px;
   line-height: 1;
   transition:
+    background-color 0.25s ease,
     color 0.25s ease,
-    transform 0.25s ease;
+    opacity 0.25s ease;
 }
-.contact-email button:hover,
-.contact-email button:focus-visible {
-  color: #111110;
-  transform: translateX(3px);
+.contact-submit:hover,
+.contact-submit:focus-visible {
+  background: #2a2a28;
+  color: #ffffff;
 }
-.contact-email button:focus-visible {
-  outline: 0;
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+.contact-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 .site-footer {
   display: grid;
@@ -1136,6 +1165,7 @@ html[lang="ru"] .about-text p {
   }
   .work-heading,
   .products-heading,
+  .about-content,
   .services-content {
     display: block;
     margin-top: var(--title-group-gap);
@@ -1181,11 +1211,7 @@ html[lang="ru"] .about-text p {
     line-height: 1.35;
   }
   .about-text {
-    margin-top: 0;
-  }
-  .about-content {
-    --about-columns: minmax(0, 1fr);
-    row-gap: 24px;
+    margin-top: 30px;
   }
   .about-tool,
   .about-process {
@@ -1234,8 +1260,16 @@ html[lang="ru"] .about-text p {
     line-height: 1;
     letter-spacing: -0.035em;
   }
-  .contact-email {
+  .contact-form {
     margin-top: 44px;
+    gap: 24px;
+  }
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 16px;
+  }
+  .contact-submit {
+    width: 100%;
   }
   .back-to-top {
     right: 20px;
@@ -1346,6 +1380,10 @@ html[lang="ru"] .hero-foot p {
   max-width: 500px;
   line-height: 1.65;
 }
+html[lang="ru"] .about-text p {
+  max-width: 340px;
+  line-height: 1.55;
+}
 html[lang="ru"] .project-details {
   letter-spacing: 0.05em;
 }
@@ -1369,6 +1407,10 @@ html[lang="ru"] .project-details {
     font-size: clamp(24px, 6.1vw, 29px);
     line-height: 1;
     letter-spacing: -0.035em;
+  }
+  html[lang="ru"] .about-text p {
+    max-width: 310px;
+    line-height: 1.55;
   }
   html[lang="ru"] .project-description {
     font-size: 9.5px;
