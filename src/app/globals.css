@@ -510,17 +510,44 @@ em {
 .project-details span:first-child {
   color: var(--muted);
 }
-.about-content,
 .services-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: var(--title-group-gap);
 }
+.about-content {
+  --about-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  --about-column-gap: clamp(32px, 5vw, 80px);
+  display: grid;
+  grid-template-columns: var(--about-columns);
+  column-gap: var(--about-column-gap);
+  align-items: start;
+  margin-top: var(--title-group-gap);
+}
+.about-content > .section-title {
+  min-width: 0;
+  max-width: 18ch;
+  margin: 0;
+  line-height: 1.08;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
 .about-text {
+  min-width: 0;
   align-self: start;
+}
+.about-text p,
+html[lang="ru"] .about-text p {
+  max-width: 40ch;
+  line-height: 1.65;
 }
 .about-tool,
 .about-process {
+  display: grid;
+  grid-template-columns: var(--about-columns);
+  column-gap: var(--about-column-gap);
+  row-gap: 24px;
+  align-items: start;
   grid-column: 1 / -1;
   min-width: 0;
   margin-top: 42px;
@@ -529,7 +556,7 @@ em {
 }
 .about-tool-heading,
 .about-process-heading {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: var(--secondary-size);
   font-weight: 500;
 }
@@ -541,28 +568,35 @@ em {
 }
 .about-tool p,
 .about-process p {
-  max-width: 680px;
+  max-width: 40ch;
   margin: 0;
   color: var(--muted);
   font-size: var(--secondary-size);
   line-height: 1.6;
+}
+.about-tool-copy,
+.about-process-content {
+  min-width: 0;
 }
 .about-tool p + p {
   margin-top: 12px;
 }
 .about-workflow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 24px 0;
-  gap: clamp(12px, 2vw, 28px);
+  margin: 0 0 24px;
+  gap: 12px 16px;
   font-size: var(--secondary-size);
 }
 .about-workflow li {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 2vw, 28px);
+  gap: 16px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .about-workflow-arrow {
   color: var(--muted);
@@ -1102,7 +1136,6 @@ em {
   }
   .work-heading,
   .products-heading,
-  .about-content,
   .services-content {
     display: block;
     margin-top: var(--title-group-gap);
@@ -1148,7 +1181,11 @@ em {
     line-height: 1.35;
   }
   .about-text {
-    margin-top: 30px;
+    margin-top: 0;
+  }
+  .about-content {
+    --about-columns: minmax(0, 1fr);
+    row-gap: 24px;
   }
   .about-tool,
   .about-process {
@@ -1309,10 +1346,6 @@ html[lang="ru"] .hero-foot p {
   max-width: 500px;
   line-height: 1.65;
 }
-html[lang="ru"] .about-text p {
-  max-width: 340px;
-  line-height: 1.55;
-}
 html[lang="ru"] .project-details {
   letter-spacing: 0.05em;
 }
@@ -1336,10 +1369,6 @@ html[lang="ru"] .project-details {
     font-size: clamp(24px, 6.1vw, 29px);
     line-height: 1;
     letter-spacing: -0.035em;
-  }
-  html[lang="ru"] .about-text p {
-    max-width: 310px;
-    line-height: 1.55;
   }
   html[lang="ru"] .project-description {
     font-size: 9.5px;

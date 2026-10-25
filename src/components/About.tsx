@@ -32,25 +32,29 @@ export function About({
             </svg>
             FIGMA
           </h3>
-          <p>{copy.figmaBody}</p>
-          <p>{copy.prototypeBody}</p>
+          <div className="about-tool-copy">
+            <p>{copy.figmaBody}</p>
+            <p>{copy.prototypeBody}</p>
+          </div>
         </div>
         <div className="about-process reveal">
           <h3 className="about-process-heading">{copy.processTitle}</h3>
-          <ol className="about-workflow">
-            {copy.steps.map((step, index) => (
-              <li key={step}>
-                {index > 0 && (
-                  <span className="about-workflow-arrow" aria-hidden="true">
-                    <span className="about-arrow-horizontal">→</span>
-                    <span className="about-arrow-vertical">↓</span>
-                  </span>
-                )}
-                <span>{step}</span>
-              </li>
-            ))}
-          </ol>
-          <p>{copy.processBody}</p>
+          <div className="about-process-content">
+            <ol className="about-workflow">
+              {copy.steps.map((step, index) => (
+                <li key={step}>
+                  {index > 0 && (
+                    <span className="about-workflow-arrow" aria-hidden="true">
+                      <span className="about-arrow-horizontal">→</span>
+                      <span className="about-arrow-vertical">↓</span>
+                    </span>
+                  )}
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            <p>{copy.processBody}</p>
+          </div>
         </div>
       </div>
     </section>
